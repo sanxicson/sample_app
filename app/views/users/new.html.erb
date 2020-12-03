@@ -3,7 +3,7 @@
 <div class="center jumbotron">
 	<h1><center><strong>SignUp</strong></center></h1>
 
-	<h2><center>Sign Up here to create a new Sample App account</center></h2>
+	<h2><center>Sign Up with your Email to create a new Sample App account</center></h2>
 </div>
 
 <div class="row">
@@ -11,17 +11,22 @@
     <%= form_with(model: @user, local: true) do |f| %>
     <%= render 'shared/error_messages' %>
 
-      <center><%= f.label :name %></center>
+      <strong><%= f.label :name, "What should we call You?" %></strong>
       <%= f.text_field :name, class: 'form-control' %>
+      <h3></h3>
 
-      <center><%= f.label :email %></center>
+      <strong><%= f.label :email, "What's your Email?" %></strong>
       <%= f.email_field :email, class: 'form-control' %>
+      <h3></h3>
 
-      <center><%= f.label :password %></center>
+      <strong><%= f.label :password, "Create a Password for your Sample App Account" %></strong>
       <%= f.password_field :password, class: 'form-control' %>
+      <h3></h3>
 
-      <center><%= f.label :password_confirmation, "Confirm Password" %></center>
+      <strong><%= f.label :password_confirmation, "Confirm your Password for your Sample App Account" %></strong>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <h3></h3>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
